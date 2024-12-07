@@ -1,0 +1,44 @@
+{
+	"name": "@open-vanilla/visitor",
+	"version": "0.0.0",
+	"description": "An ECMAScript module to visit any hashmap-like structure (AST, custom tree, ...) and apply some algorithms",
+	"homepage": "https://github.com/adbayb/esvisitor/tree/main/esvisitor#readme",
+	"bugs": "https://github.com/adbayb/esvisitor/issues",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:adbayb/open-vanilla.git",
+		"directory": "libraries/visitor"
+	},
+	"license": "MIT",
+	"author": "Ayoub Adib <adbayb@gmail.com> (https://twitter.com/adbayb)",
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": {
+			"source": "./src/index.ts",
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.mjs",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "pnpm clean && quickbundle build",
+		"clean": "rm -rf dist",
+		"prepublishOnly": "pnpm build",
+		"start": "pnpm watch",
+		"test": "vitest",
+		"watch": "quickbundle watch"
+	},
+	"devDependencies": {
+		"quickbundle": "2.8.0",
+		"vitest": "2.1.8"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org"
+	}
+}

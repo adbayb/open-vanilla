@@ -1,0 +1,15 @@
+{
+	"name": "@examples/visitor-swc",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"start": "node -r esbuild-register ./src/index.ts"
+	},
+	"dependencies": {
+		"@open-vanilla/visitor": "workspace:^"
+	},
+	"devDependencies": {
+		"@swc/core": "1.10.0",
+		"esbuild-register": "3.6.0"
+	}
+}
