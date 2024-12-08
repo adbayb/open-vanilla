@@ -8,9 +8,9 @@
 
 ## 🌍 Ecosystem
 
-| Library                 | Description                                                                                                |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `@open-vanilla/visitor` | An ECMAScript module to visit any hashmap-like structure (AST, custom tree, ...) and apply some algorithms |
+| Library                                         | Description                                                                                            |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [`@open-vanilla/visitor`](./libraries/visitor/) | A vanilla module to visit any hashmap-like structure (AST, custom tree, ...) and apply some algorithms |
 
 ## ☑️ TODO
 
