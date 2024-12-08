@@ -3,14 +3,13 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"start": "node -r esbuild-register ./src/index.ts"
+		"start": "tsx ./src/index.ts"
 	},
 	"dependencies": {
 		"@open-vanilla/visitor": "workspace:^"
 	},
 	"devDependencies": {
 		"@babel/parser": "7.26.3",
-		"@babel/types": "7.26.3",
-		"esbuild-register": "3.6.0"
+		"@babel/types": "7.26.3"
 	}
 }

@@ -1,7 +1,7 @@
 {
-	"name": "@open-vanilla/visitor",
-	"version": "1.0.0",
-	"description": "A vanilla module implementing the visitor pattern to traverse any hashmap-like structure (AST, custom tree, ...) and apply some algorithms",
+	"name": "@open-vanilla/result",
+	"version": "0.0.0",
+	"description": "A vanilla module implementing the Result (also known as Either) pattern to make the error handling more explicit",
 	"homepage": "https://github.com/adbayb/esvisitor/tree/main/esvisitor#readme",
 	"bugs": "https://github.com/adbayb/esvisitor/issues",
 	"repository": {
