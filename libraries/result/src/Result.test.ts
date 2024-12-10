@@ -7,14 +7,14 @@ describe("Result", () => {
 		const output = Result.success("Successful");
 
 		expect(output.type).toBe("success");
-		expect(output.value).toBe("Successful");
+		expect(output.payload).toBe("Successful");
 	});
 
 	test("should create failure value", () => {
 		const output: Result<"Success", "Failure"> = Result.failure("Failure");
 
 		expect(output.type).toBe("failure");
-		expect(output.value).toBe("Failure");
+		expect(output.payload).toBe("Failure");
 	});
 
 	test("should unwrap value", () => {
@@ -42,12 +42,12 @@ describe("Result", () => {
 		};
 
 		expect(matcher(Result.success("Successful"))).toStrictEqual({
+			payload: "Successful",
 			type: "success",
-			value: "Successful",
 		});
 		expect(matcher(Result.failure("Failure"))).toStrictEqual({
+			payload: "Failure",
 			type: "failure",
-			value: "Failure",
 		});
 	});
 });

@@ -15,11 +15,14 @@ export class Result<
 > {
 	public type: Type;
 
-	public value: FailureValue | SuccessValue;
+	public payload: FailureValue | SuccessValue;
 
-	private constructor(type: ResultType, value: FailureValue | SuccessValue) {
+	private constructor(
+		type: ResultType,
+		payload: FailureValue | SuccessValue,
+	) {
 		this.type = type as typeof this.type;
-		this.value = value;
+		this.payload = payload;
 	}
 
 	/**
@@ -54,16 +57,16 @@ export class Result<
 	 */
 	public unwrap() {
 		if (this.type === "failure") {
-			throw this.value instanceof Error
-				? this.value
+			throw this.payload instanceof Error
+				? this.payload
 				: new Error(
-						typeof this.value === "string"
-							? this.value
-							: JSON.stringify(this.value),
+						typeof this.payload === "string"
+							? this.payload
+							: JSON.stringify(this.payload),
 					);
 		}
 
-		return this.value as SuccessValue;
+		return this.payload as SuccessValue;
 	}
 
 	/**
@@ -86,24 +89,24 @@ export class Result<
 		failure: (
 			input: Pick<
 				Result<never, FailureValue, "failure">,
-				"type" | "value"
+				"payload" | "type"
 			>,
 		) => FailureOutput;
 		success: (
 			input: Pick<
 				Result<SuccessValue, never, "success">,
-				"type" | "value"
+				"payload" | "type"
 			>,
 		) => SuccessOutput;
 	}) {
 		return this.type === "failure"
 			? input.failure({
+					payload: this.payload as FailureValue,
 					type: this.type,
-					value: this.value as FailureValue,
 				})
 			: input.success({
+					payload: this.payload as SuccessValue,
 					type: this.type,
-					value: this.value as SuccessValue,
 				});
 	}
 }

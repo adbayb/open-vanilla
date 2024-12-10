@@ -12,28 +12,28 @@ const output = getOutput();
 const simulatedErrorOutput = getOutput(true);
 
 if (output.type === "failure") {
-	console.error("Failure case", output.value);
+	console.error("Failure case", output.payload);
 } else {
-	console.log("Success case", output.value);
+	console.log("Success case", output.payload);
 }
 
 if (simulatedErrorOutput.type === "failure") {
-	console.error("Failure case", simulatedErrorOutput.value);
+	console.error("Failure case", simulatedErrorOutput.payload);
 } else {
-	console.log("Success cas", simulatedErrorOutput.value);
+	console.log("Success cas", simulatedErrorOutput.payload);
 }
 
 const customOutput = output.match({
 	failure(input) {
 		return {
 			hasError: true,
-			value: input.value,
+			value: input.payload,
 		};
 	},
 	success(input) {
 		return {
 			hasError: false,
-			value: input.value,
+			value: input.payload,
 		};
 	},
 });
@@ -42,13 +42,13 @@ const customSimulatedErrorOutput = simulatedErrorOutput.match({
 	failure(input) {
 		return {
 			hasError: true,
-			value: input.value,
+			value: input.payload,
 		};
 	},
 	success(input) {
 		return {
 			hasError: false,
-			value: input.value,
+			value: input.payload,
 		};
 	},
 });
