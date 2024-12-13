@@ -2,8 +2,8 @@
 	"name": "@open-vanilla/visitor",
 	"version": "1.0.0",
 	"description": "A vanilla module implementing the visitor pattern to traverse any hashmap-like structure (AST, custom tree, ...) and apply some algorithms",
-	"homepage": "https://github.com/adbayb/esvisitor/tree/main/esvisitor#readme",
-	"bugs": "https://github.com/adbayb/esvisitor/issues",
+	"homepage": "https://github.com/adbayb/open-vanilla/blob/main/README.md",
+	"bugs": "https://github.com/adbayb/open-vanilla/issues",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:adbayb/open-vanilla.git",

@@ -1,15 +1,15 @@
-import { Result } from "@open-vanilla/result";
+import { failure, match, success, unwrap } from "@open-vanilla/result";
 
-const getOutput = (simulatedError = false) => {
+const getResult = (simulatedError = false) => {
 	if (simulatedError) {
-		return Result.failure("Unable to process the value");
+		return failure(new Error("Unable to process the value"));
 	}
 
-	return Result.success({ value: "hello world" });
+	return success({ value: "hello world" });
 };
 
-const output = getOutput();
-const simulatedErrorOutput = getOutput(true);
+const output = getResult();
+const simulatedErrorOutput = getResult(true);
 
 if (output.type === "failure") {
 	console.error("Failure case", output.payload);
@@ -20,35 +20,35 @@ if (output.type === "failure") {
 if (simulatedErrorOutput.type === "failure") {
 	console.error("Failure case", simulatedErrorOutput.payload);
 } else {
-	console.log("Success cas", simulatedErrorOutput.payload);
+	console.log("Success case", simulatedErrorOutput.payload);
 }
 
-const customOutput = output.match({
+const customOutput = match(output, {
 	failure(input) {
 		return {
 			hasError: true,
-			value: input.payload,
+			value: input,
 		};
 	},
 	success(input) {
 		return {
 			hasError: false,
-			value: input.payload,
+			value: input,
 		};
 	},
 });
 
-const customSimulatedErrorOutput = simulatedErrorOutput.match({
+const customSimulatedErrorOutput = match(simulatedErrorOutput, {
 	failure(input) {
 		return {
 			hasError: true,
-			value: input.payload,
+			value: input,
 		};
 	},
 	success(input) {
 		return {
 			hasError: false,
-			value: input.payload,
+			value: input,
 		};
 	},
 });
@@ -56,10 +56,10 @@ const customSimulatedErrorOutput = simulatedErrorOutput.match({
 console.log(customOutput);
 console.log(customSimulatedErrorOutput);
 
-console.log(output.unwrap());
+console.log(unwrap(output));
 
 try {
-	simulatedErrorOutput.unwrap();
+	unwrap(simulatedErrorOutput);
 } catch (error) {
 	console.error(error);
 }

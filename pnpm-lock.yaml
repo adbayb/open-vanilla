@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@adbayb/stack':
-        specifier: 2.10.0
-        version: 2.10.0(@types/node@22.10.1)(@typescript-eslint/utils@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint-plugin-import@2.30.0(@typescript-eslint/parser@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.16.0(jiti@1.21.6)))(jiti@1.21.6)(picomatch@4.0.2)(vitest@2.1.8(@types/node@22.10.1))
+        specifier: 2.13.0
+        version: 2.13.0(@types/node@22.10.1)(@typescript-eslint/utils@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint-plugin-import@2.30.0(@typescript-eslint/parser@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.16.0(jiti@1.21.6)))(jiti@1.21.6)(picomatch@4.0.2)(vitest@2.1.8(@types/node@22.10.1))
       tsx:
         specifier: 4.19.2
         version: 4.19.2
@@ -69,8 +69,8 @@ importers:
 
 packages:
 
-  '@adbayb/stack@2.10.0':
-    resolution: {integrity: sha512-5MwLbeSzEictpg7eIa75woIsFk9SadoGbMoz+qQh4Xo1qL1eCs+SCkIvZvV2yHLHKpYGi7er2gnnN8CjyJj2CA==}
+  '@adbayb/stack@2.13.0':
+    resolution: {integrity: sha512-Iaxh04PC6arWycyzhpsI3wD+NOOAfCWnTkOo8UJACt7mtowMRA4M5NFq5Zh+W+S5cr/kMkAk2SsQuu4LXEgmBw==}
     hasBin: true
 
   '@ampproject/remapping@2.3.0':
@@ -4367,7 +4367,7 @@ packages:
 
 snapshots:
 
-  '@adbayb/stack@2.10.0(@types/node@22.10.1)(@typescript-eslint/utils@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint-plugin-import@2.30.0(@typescript-eslint/parser@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.16.0(jiti@1.21.6)))(jiti@1.21.6)(picomatch@4.0.2)(vitest@2.1.8(@types/node@22.10.1))':
+  '@adbayb/stack@2.13.0(@types/node@22.10.1)(@typescript-eslint/utils@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint-plugin-import@2.30.0(@typescript-eslint/parser@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.16.0(jiti@1.21.6)))(jiti@1.21.6)(picomatch@4.0.2)(vitest@2.1.8(@types/node@22.10.1))':
     dependencies:
       '@changesets/changelog-github': 0.5.0
       '@changesets/cli': 2.27.10

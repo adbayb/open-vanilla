@@ -1,7 +1,7 @@
 <br>
 <div align="center">
     <h1>@open-vanilla/result</h1>
-    <strong>A vanilla module implementing the Result (also known as Either) pattern to make the error handling more explicit</strong>
+    <strong>A vanilla module implementing the Result pattern to make the error handling more explicit</strong>
 </div>
 <br>
 <br>
@@ -9,7 +9,7 @@
 ## ✨ Features
 
 TypeScript's implementation for the Result pattern inspired by the [Rust](https://doc.rust-lang.org/std/result/) and [Swift](https://developer.apple.com/documentation/swift/result) primitive.
-The Result pattern is also known as [Either pattern](https://www.thoughtworks.com/insights/blog/either-data-type-alternative-throwing-exceptions) in some functional programming languages.
+The Result pattern is an implementation variant of [Either pattern](https://www.thoughtworks.com/insights/blog/either-data-type-alternative-throwing-exceptions) well-known in some functional programming languages.
 
 In contrast to traditional exception handling, the Result pattern:
 
@@ -34,24 +34,27 @@ yarn add @open-vanilla/result
 2️⃣ Once you're done, you can play with the API:
 
 ```ts
-import { Result } from "@open-vanilla/result";
+import { success, failure } from "@open-vanilla/result";
+import type { Result } from "@open-vanilla/result";
 
-const createPassword = (input: string) => {
+const createPassword = (input: string): Result<string> => {
 	if (input.length < 12) {
-		return Result.failure("The password must be longer than 12 characters");
+		return failure(
+			new Error("The password must be longer than 12 characters"),
+		);
 	}
 
-	return Result.success(input);
+	return success(input);
 };
 
 const password = createPassword("hello1234");
 
 if (password.type === "failure") {
 	// Password failure case logic.
-	console.error("Failure case", password.value);
+	console.error("Failure case", password.payload);
 } else {
 	// Password success case logic.
-	console.log("Success case", password.value);
+	console.log("Success case", password.payload);
 }
 ```
 

@@ -1,53 +1,46 @@
 import { describe, expect, test } from "vitest";
 
-import { Result } from "./Result";
+import { failure, match, success, unwrap } from "./Result";
+import type { Result } from "./Result";
+
+const matcher = <ResultInput extends Result<unknown>>(result: ResultInput) => {
+	return match(result, {
+		failure(input) {
+			return input;
+		},
+		success(input) {
+			return input;
+		},
+	});
+};
 
 describe("Result", () => {
 	test("should create successful value", () => {
-		const output = Result.success("Successful");
+		const output = success("Successful");
 
-		expect(output.type).toBe("success");
 		expect(output.payload).toBe("Successful");
 	});
 
 	test("should create failure value", () => {
-		const output: Result<"Success", "Failure"> = Result.failure("Failure");
+		const output = failure(new Error("Failure"));
 
-		expect(output.type).toBe("failure");
-		expect(output.payload).toBe("Failure");
+		expect(output.payload).toStrictEqual(new Error("Failure"));
 	});
 
 	test("should unwrap value", () => {
-		const output = Result.success("Successful").unwrap();
+		const output = unwrap(success("Successful"));
 
 		expect(output).toBe("Successful");
 
 		expect(() => {
-			Result.failure("Failure").unwrap();
+			unwrap(failure(new Error("Failure")));
 		}).toThrow("Failure");
 	});
 
 	test("should match value", () => {
-		const matcher = <ResultInput extends Result<unknown, unknown>>(
-			result: ResultInput,
-		) => {
-			return result.match({
-				failure(input) {
-					return input;
-				},
-				success(input) {
-					return input;
-				},
-			});
-		};
-
-		expect(matcher(Result.success("Successful"))).toStrictEqual({
-			payload: "Successful",
-			type: "success",
-		});
-		expect(matcher(Result.failure("Failure"))).toStrictEqual({
-			payload: "Failure",
-			type: "failure",
-		});
+		expect(matcher(success("Successful"))).toBe("Successful");
+		expect(matcher(failure(new Error("Failure")))).toStrictEqual(
+			new Error("Failure"),
+		);
 	});
 });
