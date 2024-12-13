@@ -1,5 +1,11 @@
 # @open-vanilla/result
 
+## 3.0.0
+
+### Major Changes
+
+- [`6885f60`](https://github.com/adbayb/open-vanilla/commit/6885f602b5635efb9ecda513edc9736a3a40f11a) Thanks [@adbayb](https://github.com/adbayb)! - Overall API revamp to allow more accurate type checking and inference.
+
 ## 2.0.0
 
 ### Major Changes
