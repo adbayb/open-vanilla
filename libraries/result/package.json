@@ -1,6 +1,6 @@
 {
 	"name": "@open-vanilla/result",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"description": "A vanilla module implementing the Result pattern to make the error handling more explicit",
 	"homepage": "https://github.com/adbayb/open-vanilla/blob/main/README.md",
 	"bugs": "https://github.com/adbayb/open-vanilla/issues",
