@@ -21,7 +21,7 @@
 		"@adbayb/stack": "2.13.0",
 		"tsx": "4.19.2"
 	},
-	"packageManager": "pnpm@9.15.9",
+	"packageManager": "pnpm@10.30.2",
 	"engines": {
 		"node": ">=22.0.0",
 		"npm": "please-use-pnpm",
