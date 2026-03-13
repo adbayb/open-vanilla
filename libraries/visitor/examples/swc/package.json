@@ -7,6 +7,6 @@
 	},
 	"dependencies": {
 		"@open-vanilla/visitor": "workspace:^",
-		"@swc/core": "^1.10.0"
+		"@swc/core": "^1.15.18"
 	}
 }
