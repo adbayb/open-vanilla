@@ -9,7 +9,7 @@
 		"@open-vanilla/visitor": "workspace:^"
 	},
 	"devDependencies": {
-		"@babel/parser": "7.26.3",
-		"@babel/types": "7.26.3"
+		"@babel/parser": "7.29.2",
+		"@babel/types": "7.29.0"
 	}
 }
