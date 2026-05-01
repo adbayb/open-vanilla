@@ -10,7 +10,7 @@ jobs:
         steps:
             - name: Checkout the code
               uses: actions/checkout@v6
-            - uses: pnpm/action-setup@v4
+            - uses: pnpm/action-setup@v6
             - name: Get node version
               run: echo "version=$(cat .nvmrc)" >> $GITHUB_OUTPUT
               id: node
