@@ -18,8 +18,8 @@
 	},
 	"prettier": "@adbayb/stack/prettier",
 	"devDependencies": {
-		"@adbayb/stack": "2.13.0",
-		"tsx": "4.19.2"
+		"@adbayb/stack": "2.40.0",
+		"tsx": "4.23.1"
 	},
 	"packageManager": "pnpm@10.34.4",
 	"engines": {
